@@ -1,0 +1,41 @@
+body, .form-control, #heading{
+    background-color: white;
+    font-family: 'Oswald', sans-serif;
+}
+body, .form-control, a, div{
+  color: #404040;
+}
+#nav_a, #nav_b{
+  color: #bfbfbf;
+}
+#nav_b{
+  font-size: 16px;
+  margin-top: 5px;
+}
+.navbar-brand{
+  font-size: 30px;
+}
+.nav-item{
+  font-size: 20px;
+}
+a:hover{
+  color: orange;
+}
+#name{
+  margin-top: 20px;
+  font-size: 60px;
+}
+table{
+  background-color: white;
+  font-size: 20px;
+}
+
+#heading{
+  margin-top: 100px;
+  font-size: 100px;
+}
+#footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

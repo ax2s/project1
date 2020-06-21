@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Book Info
+{% endblock %}
+
+{% block main %}
+<div>
+  <table class="table table-borderless">
+    <thead>
+      <th style="width: 20%"></th>
+      <th style="width: 30%"></th>
+      <th style="width: 20%"></th>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        <th scope="row">Title: </th>
+          <td>{{row['title']}}</td>
+        <th scope="row">Goodreads AVG Rating: </th>
+          <td>{{gr_ratings['avg_rating']}}</td>
+      </tr>
+      <tr>
+        <th scope="row">ISBN: </th>
+          <td>{{row['isbn']}}</td>
+        <th scope="row">Goodreads No of Ratings: </th>
+          <td>{{gr_ratings['n_ratings']}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Author: </th>
+        <td>{{row['author']}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Year Published: </th>
+        <td>{{row['year']}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<h2>Reviews</h2>
+  <div id="review_new" class="w3-hide">
+    <form action="/book_info/{{isbn}}" method="POST">
+        <label for="review">Your Review</label>
+        <div class="form-group">
+          <textarea rows="3" autofocus class="form-control form-control-lg" name="review" placeholder="Enter review here..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="rating">Rating</label>
+          <select id="rating" class="form-control" name=rating required>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+          </select>
+        </div>
+        <button class="btn btn-lg btn-block" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div id="review_old" class="w3-hide">
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 20%">Name </th>
+          <th style="width: 70%">Review </th>
+          <th style="width: 10%">Rating </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in reviews %}
+        <tr>
+          <td>{{row['fname']}}</td>
+          <td>{{row['comment']}}</td>
+          <td>{{row['rating']}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% if submit == 0 %}
+    <script>myFunction('review_new');</script>
+  {% endif %}
+  {% if r != 0 %}
+    <script>myFunction('review_old');</script>
+  {% endif %}
+
+{% endblock %}

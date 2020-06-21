@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Books
+{% endblock %}
+
+{% block main %}
+    <div>
+      <ul>
+      {% for row in rows %}
+        <li><a href="/book_info/{{row['isbn']}}">ISBN: {{row['isbn']}} Title: {{row['title']}} Author: {{row['author']}} Year: {{row['year']}}</a></li>
+      {% endfor %}
+      </ul>
+    </div>
+{% endblock %}
