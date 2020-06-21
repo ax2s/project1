@@ -2,7 +2,4 @@ Flask
 Flask-Session
 psycopg2-binary
 SQLAlchemy
-sqlalchemy.orm
-werkzeug.exceptions
-werkzeug.security
 functools
