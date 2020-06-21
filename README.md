@@ -7,3 +7,6 @@ The user of the app  are presented with the option to login/register(if the acco
 
 ### Home
 After logging in, the user is taken to the index page where they can search for books by title, author or ISBN. If the book is found in the database, the user is displayed with information about the book, the past reviews by previous users, an option to add their own review provided they haven't reviewed the same book before.
+
+
+The app is currently being hosted on Heroku at https://ax2sproject.herokuapp.com/
